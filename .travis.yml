@@ -1,0 +1,13 @@
+sudo: false
+
+language: go
+go:
+    - 1.7
+
+script:
+    - go build
+    - cd editors/monaco/ && yarn install && yarn run lint
+
+notifications:
+    email: false
+
