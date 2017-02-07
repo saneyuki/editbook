@@ -4,6 +4,9 @@ language: go
 go:
     - 1.7
 
+before_script:
+    - npm install yarn -g
+
 script:
     - go build
     - cd editors/monaco/ && yarn install && yarn run lint
