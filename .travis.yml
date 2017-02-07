@@ -15,13 +15,11 @@ before_script:
     - export PATH=$HOME/.yarn/bin:$PATH # add `yarn` to path.
 
 script:
-    - go build
-    - cd editors/monaco/
-    - yarn install
-    - yarn run lint
+    - ./script/travis_test.sh
 
 matrix:
     allow_failures:
+        # ESLint fails currently
         - env: TEST_FOR_CLIENT=true
 
 notifications:
