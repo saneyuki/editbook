@@ -4,8 +4,9 @@ sudo: false
 language: go
 
 env:
-    - TEST_FOR_SERVER=true
-    - TEST_FOR_CLIENT=true
+    matrix:
+        - TEST_FOR_SERVER=true
+        - TEST_FOR_CLIENT=true
 
 before_script:
     - ./script/travis_before_script.sh
