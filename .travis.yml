@@ -6,11 +6,15 @@ go:
     - 1.7
 
 before_script:
-    - npm install yarn -g
+    - nvm install 6
+    - curl -o- -L https://yarnpkg.com/install.sh | bash # install yarn pkg
 
 script:
     - go build
-    - cd editors/monaco/ && yarn install && yarn run lint
+    - cd editors/monaco/
+    - yarn install
+    - setup.sh
+    - yarn run lint
 
 notifications:
     email: false
